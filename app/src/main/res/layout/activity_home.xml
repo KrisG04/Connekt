@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id = "@+id/events"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="170dp"
+            android:layout_height="115dp"
+            android:background="@color/cardview_dark_background">
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/canteen"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_toRightOf="@id/events"
+            app:cardBackgroundColor="#2979FF">
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id = "@+id/clubs"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/events"
+            app:cardBackgroundColor="#2979FF">
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/accomodation"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="170dp"
+            android:layout_height="115dp"
+            android:layout_below="@id/canteen"
+            android:layout_toRightOf="@id/clubs"
+            android:background="@color/cardview_dark_background">
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/announcements"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_below="@id/clubs"
+            app:cardBackgroundColor="#1A237E">
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</ScrollView>
