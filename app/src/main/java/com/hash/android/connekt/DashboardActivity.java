@@ -1,9 +1,11 @@
 package com.hash.android.connekt;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -49,6 +51,12 @@ public class DashboardActivity extends AppCompatActivity {
 //        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        Typeface custome_font = Typeface.createFromAsset(getAssets(),"pacifico.ttf");
+
+        Toolbar toolbarTop = (Toolbar)findViewById(R.id.toolbar_top);
+        TextView mTitle = toolbarTop.findViewById(R.id.toolbar_title);
+        mTitle.setTypeface(custome_font);
 
     }
 
