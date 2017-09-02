@@ -55,6 +55,19 @@ public class DashboardActivity extends AppCompatActivity {
         Toolbar toolbarTop = (Toolbar) findViewById(R.id.toolbar_top);
         TextView mTitle = toolbarTop.findViewById(R.id.toolbar_title);
         mTitle.setTypeface(custom_font);
+
+        Typeface custom_font2 = Typeface.createFromAsset(getAssets(),  "opensans.ttf");
+
+        TextView text1 = (TextView) findViewById(R.id.Text1);
+        TextView text2 =(TextView)findViewById(R.id.Text2);
+        TextView text3 = (TextView) findViewById(R.id.Image1Text);
+        TextView text4 = (TextView) findViewById(R.id.Image2Text);
+
+        text1.setTypeface(custom_font2);
+        text2.setTypeface(custom_font2);
+        text3.setTypeface(custom_font2);
+        text4.setTypeface(custom_font2);
+
     }
 
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fillViewport="true">
 
     <RelativeLayout
@@ -11,47 +11,118 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
-            android:id = "@+id/events"
-            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:id="@+id/events"
             android:layout_width="170dp"
             android:layout_height="115dp"
-            android:background="@color/cardview_dark_background">
+            android:layout_margin="@dimen/activity_horizontal_margin">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/marcus_neto_96651" />
+
+                <TextView
+                    android:id="@+id/Image1Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Events"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/accomodation"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_toRightOf="@id/events"
+            app:cardBackgroundColor="#1DA1F2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/Text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Accomodation"
+                    android:textColor="@android:color/white"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/clubs"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/events"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:cardBackgroundColor="#1DA1F2">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/Text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Clubs and Societies"
+                    android:textColor="@android:color/white"
+                    android:textSize="17sp" />
+            </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/canteen"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:layout_width="170dp"
-            android:layout_height="70dp"
-            android:layout_toRightOf="@id/events"
-            app:cardBackgroundColor="#2979FF">
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id = "@+id/clubs"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:layout_width="170dp"
-            android:layout_height="70dp"
-            android:layout_below="@id/events"
-            app:cardBackgroundColor="#2979FF">
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/accomodation"
-            android:layout_margin="@dimen/activity_horizontal_margin"
             android:layout_width="170dp"
             android:layout_height="115dp"
-            android:layout_below="@id/canteen"
-            android:layout_toRightOf="@id/clubs"
-            android:background="@color/cardview_dark_background">
+            android:layout_below="@id/accomodation"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_toRightOf="@id/clubs">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/robin_stickel_82145" />
+
+                <TextView
+                    android:id="@+id/Image2Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Canteen"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/announcements"
-            android:layout_margin="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/clubs"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:visibility="gone"
             app:cardBackgroundColor="#1A237E">
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -161,9 +232,9 @@
             android:id="@+id/firstCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_below="@+id/announcements"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/authorTextView"
@@ -326,10 +397,10 @@
             android:id="@+id/secondCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_below="@+id/view"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/view"
+            android:layout_marginTop="7dp">
 
             <TextView
                 android:id="@+id/authorTextView"
@@ -352,7 +423,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@+id/imageView11"
                 android:layout_toRightOf="@+id/imageView11"
-                android:text="@juecell"
+                android:text="\@juecell"
                 app:layout_constraintLeft_toRightOf="@+id/imageView11"
                 app:layout_constraintTop_toTopOf="@+id/authorTextView" />
 
@@ -489,11 +560,11 @@
         </RelativeLayout>
 
         <View
-            android:layout_below="@id/firstCard"
+            android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="0.4dp"
-            android:background="@android:color/darker_gray"
-            android:id="@+id/view" />
+            android:layout_below="@id/firstCard"
+            android:background="@android:color/darker_gray" />
 
 
     </RelativeLayout>

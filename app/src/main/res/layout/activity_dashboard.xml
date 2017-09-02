@@ -68,6 +68,10 @@
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize">
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/profiletest"/>
             <TextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
