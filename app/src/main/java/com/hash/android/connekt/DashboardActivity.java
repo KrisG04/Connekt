@@ -9,8 +9,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class DashboardActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -52,12 +50,11 @@ public class DashboardActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Typeface custome_font = Typeface.createFromAsset(getAssets(),"pacifico.ttf");
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "pacifico.ttf");
 
-        Toolbar toolbarTop = (Toolbar)findViewById(R.id.toolbar_top);
+        Toolbar toolbarTop = (Toolbar) findViewById(R.id.toolbar_top);
         TextView mTitle = toolbarTop.findViewById(R.id.toolbar_title);
-        mTitle.setTypeface(custome_font);
-
+        mTitle.setTypeface(custom_font);
     }
 
 }

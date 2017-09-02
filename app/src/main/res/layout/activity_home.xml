@@ -2,7 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -48,10 +50,451 @@
             android:id="@+id/announcements"
             android:layout_margin="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/clubs"
             app:cardBackgroundColor="#1A237E">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:background="#1B3242"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/avatarImage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="4dp"
+                    android:transitionName="profileTrans"
+                    app:srcCompat="@drawable/profiletest"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linearLayout"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_toEndOf="@+id/priorityTextView"
+                    android:layout_toRightOf="@+id/priorityTextView"
+                    android:text="•"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/priorityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linearLayout"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:text="Class"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/avatarImage"
+                    android:layout_centerInParent="false"
+                    android:layout_centerVertical="false"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/leftNavigateRecyclerView"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="0"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/updateTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="1"
+                        android:text="College teams football match at the ground starts from 4PM."
+                        android:textColor="@android:color/white" />
+
+                    <ImageView
+                        android:id="@+id/rightNavigateRecyclerView"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="0"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_keyboard_arrow_right_white_24px"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/textView15"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_toEndOf="@+id/textView15"
+                    android:layout_toRightOf="@+id/textView15"
+                    android:text="Updates"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
         </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/firstCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/announcements"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/authorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/guideline6"
+                android:layout_marginLeft="4dp"
+                android:layout_toEndOf="@+id/logoImageView"
+                android:layout_toRightOf="@+id/logoImageView"
+                android:text="The JU Journal"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/clubTagTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/imageView11"
+                android:layout_toRightOf="@+id/imageView11"
+                android:text="\@jujournal"
+                app:layout_constraintLeft_toRightOf="@+id/imageView11"
+                app:layout_constraintTop_toTopOf="@+id/authorTextView" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="4dp"
+                android:layout_toEndOf="@+id/clubTagTextView"
+                android:layout_toRightOf="@+id/clubTagTextView"
+                android:text="•"
+                app:layout_constraintLeft_toRightOf="@+id/clubTagTextView"
+                app:layout_constraintTop_toTopOf="@+id/clubTagTextView" />
+
+            <ImageView
+                android:id="@+id/postImageView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignLeft="@+id/shortDescTextView"
+                android:layout_alignStart="@+id/shortDescTextView"
+                android:layout_below="@+id/shortDescTextView"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                android:maxHeight="180dp"
+                android:scaleType="fitXY"
+                android:transitionName="sharedImage"
+                android:visibility="visible"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shortDescTextView"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/headingTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/authorTextView"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/logoImageView"
+                android:layout_toRightOf="@+id/logoImageView"
+                android:text="Jadavpur University ranks 9th"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/authorTextView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/authorTextView" />
+
+            <TextView
+                android:id="@+id/shortDescTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headingTextView"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/logoImageView"
+                android:layout_toRightOf="@+id/logoImageView"
+                android:autoLink="web"
+                android:paddingBottom="8dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et pharetra quam, at aliquam ipsum. Praesent euismod purus vel massa elementum "
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headingTextView" />
+
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/textView23"
+                android:layout_toRightOf="@+id/textView23"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="2 hr. ago"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/textView23"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/clubTagTextView" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignBottom="@+id/authorTextView"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="7dp"
+                android:layout_toEndOf="@+id/authorTextView"
+                android:layout_toRightOf="@+id/authorTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/authorTextView"
+                app:layout_constraintLeft_toRightOf="@+id/authorTextView"
+                app:layout_constraintTop_toTopOf="@+id/authorTextView"
+                app:layout_constraintVertical_bias="0.6"
+                app:srcCompat="@drawable/check"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/adTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#FBC02D"
+                android:text=" Ad "
+                android:textColor="@android:color/white"
+                android:visibility="invisible"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="177dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.17" />
+
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:srcCompat="@drawable/journal"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/secondCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/authorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/guideline6"
+                android:layout_marginLeft="4dp"
+                android:layout_toEndOf="@+id/logoImageView"
+                android:layout_toRightOf="@+id/logoImageView"
+                android:text="The JU E-Cell"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/clubTagTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/imageView11"
+                android:layout_toRightOf="@+id/imageView11"
+                android:text="@juecell"
+                app:layout_constraintLeft_toRightOf="@+id/imageView11"
+                app:layout_constraintTop_toTopOf="@+id/authorTextView" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="4dp"
+                android:layout_toEndOf="@+id/clubTagTextView"
+                android:layout_toRightOf="@+id/clubTagTextView"
+                android:text="•"
+                app:layout_constraintLeft_toRightOf="@+id/clubTagTextView"
+                app:layout_constraintTop_toTopOf="@+id/clubTagTextView" />
+
+            <ImageView
+                android:id="@+id/postImageView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignLeft="@+id/shortDescTextView"
+                android:layout_alignStart="@+id/shortDescTextView"
+                android:layout_below="@+id/shortDescTextView"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                android:maxHeight="180dp"
+                android:scaleType="fitXY"
+                android:transitionName="sharedImage"
+                android:visibility="visible"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shortDescTextView"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/headingTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/authorTextView"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/logoImageView"
+                android:layout_toRightOf="@+id/logoImageView"
+                android:text="Hackathon organised by Facebook to be held in JU"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/authorTextView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/authorTextView" />
+
+            <TextView
+                android:id="@+id/shortDescTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headingTextView"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/logoImageView"
+                android:layout_toRightOf="@+id/logoImageView"
+                android:autoLink="web"
+                android:paddingBottom="8dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et pharetra quam, at aliquam ipsum. Praesent euismod purus vel massa elementum "
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headingTextView" />
+
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/textView23"
+                android:layout_toRightOf="@+id/textView23"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="3 hr. ago"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/textView23"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/clubTagTextView" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignBottom="@+id/authorTextView"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="7dp"
+                android:layout_toEndOf="@+id/authorTextView"
+                android:layout_toRightOf="@+id/authorTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/authorTextView"
+                app:layout_constraintLeft_toRightOf="@+id/authorTextView"
+                app:layout_constraintTop_toTopOf="@+id/authorTextView"
+                app:layout_constraintVertical_bias="0.6"
+                app:srcCompat="@drawable/check"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/adTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#FBC02D"
+                android:text=" Ad "
+                android:textColor="@android:color/white"
+                android:visibility="invisible"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="177dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.17" />
+
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:srcCompat="@drawable/ecell"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_below="@id/firstCard"
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/view" />
+
 
     </RelativeLayout>
 </ScrollView>
