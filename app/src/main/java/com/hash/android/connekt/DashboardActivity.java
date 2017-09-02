@@ -18,14 +18,21 @@ public class DashboardActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+//                    mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_search:
+//                    mTextMessage.setText("Search");
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_message:
+//                    mTextMessage.setText("Message");
                     return true;
+                case R.id.navigation_profile:
+//                    mTextMessage.setText("Profile");
+                    return true;
+                case R.id.navigation_project:
+//                    mTextMessage.setText("Projects");
+                    return true;
+
             }
             return false;
         }
@@ -37,7 +44,7 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+//        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
