@@ -18,6 +18,7 @@
             android:layout_height="0dp"
             android:contentDescription="@string/full_bleed_image"
             android:scaleType="centerCrop"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -28,19 +29,19 @@
 
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
             android:layout_marginLeft="48dp"
             android:layout_marginRight="48dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="48dp"
-            android:textColorHint="@android:color/white"
+            android:textColorHint="@android:color/black"
+            app:layout_constraintHorizontal_bias="0.39"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/connektTextView"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="48dp"
-            android:id="@+id/textInputLayout"
-            app:layout_constraintHorizontal_bias="0.39">
+            app:layout_constraintTop_toBottomOf="@+id/connektTextView">
 
             <EditText
                 android:id="@+id/usernameTextView"
@@ -53,10 +54,9 @@
             android:id="@+id/view"
             android:layout_width="200dp"
             android:layout_height="1dp"
-            android:background="@android:color/white"
+            android:layout_marginTop="24dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="24dp"
             app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
 
@@ -64,27 +64,28 @@
             android:id="@+id/spinner"
             android:layout_width="0dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginStart="24dp"
-            android:background="@android:color/darker_gray"
-            android:backgroundTint="#E90F41"
+            android:layout_marginEnd="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/twitterBlue"
             android:minWidth="30dp"
             android:visibility="visible"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
         <TextView
             android:id="@+id/connektTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="88dp"
             android:text="Connekt"
-            android:textColor="@android:color/white"
+            android:textColor="@color/twitterBlue"
             android:textSize="32sp"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -94,22 +95,23 @@
             style="@style/FirebaseUI.Button.AccountChooser.FacebookButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:text="Complete sign up with Facebook"
+            app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            tools:layout_editor_absoluteY="393dp" />
+            app:layout_constraintTop_toBottomOf="@+id/urlDomainTV" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Your unique URL is"
-            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/view"
-            app:layout_constraintHorizontal_bias="0.497" />
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <TextView
             android:id="@+id/urlDomainTV"
@@ -117,27 +119,25 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
-            android:checkMark="@android:color/white"
+            android:checkMark="@android:color/black"
             android:checked="true"
-            android:text=".jaduniv.connekt"
-            android:textColor="#E90F41"
+            android:text="jaduniv.connekt"
+            android:textColor="@color/twitterBlue"
             android:textStyle="italic"
-            app:layout_constraintLeft_toRightOf="@+id/userNameTextView"
-            app:layout_constraintTop_toTopOf="@+id/userNameTextView" />
+            app:layout_constraintLeft_toRightOf="@+id/urlUserNameTextView"
+            app:layout_constraintTop_toTopOf="@+id/urlUserNameTextView" />
 
         <TextView
             android:id="@+id/urlUserNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
             android:layout_marginTop="4dp"
-            android:checkMark="@android:color/white"
+            android:checkMark="@android:color/black"
             android:checked="true"
-            android:text="sapt3"
-            android:textColor="#E90F41"
+            android:text="sapt3."
             android:textStyle="italic"
-            app:layout_constraintHorizontal_bias="0.36"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 

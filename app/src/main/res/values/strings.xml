@@ -4,4 +4,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="full_bleed_image">Full bleed image</string>
+    <string name="facebook_app_id">115339265807636</string>
+    <string name="fb_login_protocol_scheme">fb115339265807636</string>
 </resources>
