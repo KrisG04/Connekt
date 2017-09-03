@@ -1,11 +1,13 @@
 package com.hash.android.connekt;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Created by Spandita Ghosh on 9/3/2017.
@@ -62,6 +64,17 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_home, container, false);
 
+        Typeface custom_font2 = Typeface.createFromAsset(getActivity().getAssets(),  "opensans.ttf");
+
+        TextView text1 = (TextView) rootView.findViewById(R.id.Text1);
+        TextView text2 =(TextView) rootView.findViewById(R.id.Text2);
+        TextView text3 = (TextView) rootView.findViewById(R.id.Image1Text);
+        TextView text4 = (TextView) rootView.findViewById(R.id.Image2Text);
+
+        text1.setTypeface(custom_font2, Typeface.BOLD);
+        text2.setTypeface(custom_font2, Typeface.BOLD);
+        text3.setTypeface(custom_font2, Typeface.BOLD);
+        text4.setTypeface(custom_font2, Typeface.BOLD);
         return rootView;
     }
 }
