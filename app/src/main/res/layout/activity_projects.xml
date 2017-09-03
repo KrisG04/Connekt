@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/projectsListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stackFromBottom="true"
+        android:divider="@android:color/black"
+        android:transcriptMode="alwaysScroll"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/projectsListView">
+
+        <EditText
+            android:id="@+id/titleEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Project Title"
+            />
+        <EditText
+            android:id="@+id/descEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleEditText"
+            android:hint="Project Description"
+            />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

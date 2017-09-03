@@ -67,7 +67,6 @@ public class Chat extends AppCompatActivity {
         String profilePic = chatter.getPhotoURL();
 
 
-
         layout = (LinearLayout) findViewById(R.id.layout1);
         sendButton = (ImageView)findViewById(R.id.sendButton);
         messageArea = (EditText)findViewById(R.id.messageArea);
