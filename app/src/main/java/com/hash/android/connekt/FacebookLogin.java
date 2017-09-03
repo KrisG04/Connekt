@@ -16,15 +16,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.ErrorCodes;
-import com.firebase.ui.auth.IdpResponse;
-import com.firebase.ui.auth.ResultCodes;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -222,52 +218,52 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RC_SIGN_IN) {
-//            startActivity(new Intent(FacebookLogin.this, DashboardActivity.class));
-            IdpResponse response = IdpResponse.fromResultIntent(data);
-
-            // Successfully signed in
-            if (resultCode == ResultCodes.OK) {
-                token = AccessToken.getCurrentAccessToken();
-                new PreferenceManager(FacebookLogin.this).setFacebookToken(token.toString());
-                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null) {
-
-                    fetchGraphData(token);
-                    mPrefs.setUID(user.getUid());
-                    mPrefs.setEmail(user.getEmail());
-                    if (user.getPhotoUrl() != null)
-                        mPrefs.setPhotoURL(user.getPhotoUrl().toString());
-//                    FirebaseAuth.getInstance().signOut();
-                    Toast.makeText(this, "Signed in", Toast.LENGTH_SHORT).show();
-
-                    //TODO: Start an intent to go to login activity
-
-                } else {
-                    Toast.makeText(this, "Failed to sign in", Toast.LENGTH_SHORT).show();
-                }
-                return;
-
-            } else {
-                // Sign in failed
-                if (response == null) {
-                    // User pressed back button
-                    Toast.makeText(this, "Sign in cancelled!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (response.getErrorCode() == ErrorCodes.NO_NETWORK) {
-                    Toast.makeText(this, "No internet connection", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (response.getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
-                    Toast.makeText(this, "Unknown Error", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-            }
-
-
-            Toast.makeText(this, "Unknown Error", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(FacebookLogin.this, DashboardActivity.class));
+//            IdpResponse response = IdpResponse.fromResultIntent(data);
+//
+//            // Successfully signed in
+//            if (resultCode == ResultCodes.OK) {
+//                token = AccessToken.getCurrentAccessToken();
+//                new PreferenceManager(FacebookLogin.this).setFacebookToken(token.toString());
+//                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                if (user != null) {
+//
+//                    fetchGraphData(token);
+//                    mPrefs.setUID(user.getUid());
+//                    mPrefs.setEmail(user.getEmail());
+//                    if (user.getPhotoUrl() != null)
+//                        mPrefs.setPhotoURL(user.getPhotoUrl().toString());
+////                    FirebaseAuth.getInstance().signOut();
+//                    Toast.makeText(this, "Signed in", Toast.LENGTH_SHORT).show();
+//
+//                    //TODO: Start an intent to go to login activity
+//
+//                } else {
+//                    Toast.makeText(this, "Failed to sign in", Toast.LENGTH_SHORT).show();
+//                }
+//                return;
+//
+//            } else {
+//                // Sign in failed
+//                if (response == null) {
+//                    // User pressed back button
+//                    Toast.makeText(this, "Sign in cancelled!", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//
+//                if (response.getErrorCode() == ErrorCodes.NO_NETWORK) {
+//                    Toast.makeText(this, "No internet connection", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//
+//                if (response.getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
+//                    Toast.makeText(this, "Unknown Error", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//            }
+//
+//
+//            Toast.makeText(this, "Unknown Error", Toast.LENGTH_SHORT).show();
         }
 
         pd.hide();
