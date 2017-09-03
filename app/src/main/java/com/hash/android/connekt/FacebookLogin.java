@@ -37,6 +37,7 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
 
     private static final int RC_SIGN_IN = 12344;
     private static final String TAG = FacebookLogin.class.getSimpleName();
+
     private static AccessToken token;
 
     static {
@@ -48,13 +49,13 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
     private PreferenceManager mPrefs;
     private EditText userNameET;
     private TextView urlTextView;
-    private String department;
+    private String university;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook_login);
-        TextView text;
+        final TextView text, urlDomain;
         text = (TextView) findViewById(R.id.connektTextView);
         mPrefs = new PreferenceManager(this);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "pacifico.ttf");
@@ -66,6 +67,7 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
         userNameET = (EditText) findViewById(R.id.usernameTextView);
         urlTextView = (TextView) findViewById(R.id.urlUserNameTextView);
 
+        urlDomain = (TextView) findViewById(R.id.urlDomainTV);
         mSpinner.setAdapter(getArtsDepartmentAdapter());
 
         userNameET.addTextChangedListener(new TextWatcher() {
@@ -76,7 +78,7 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                urlTextView.setText(charSequence);
+                urlTextView.setText(charSequence + ".");
             }
 
             @Override
@@ -88,7 +90,25 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
         mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                department = adapterView.getItemAtPosition(i).toString();
+                university = adapterView.getItemAtPosition(i).toString();
+                switch (university) {
+                    case "Jadavpur University":
+                        urlDomain.setText("jaduniv.connekt");
+                        break;
+
+                    case "IIEST Shibpur":
+                        urlDomain.setText("iiest.connekt");
+                        break;
+
+                    case "IIT Kharagpur":
+                        urlDomain.setText("iitkgp.connekt");
+                        break;
+
+                    case "NIT Durgapur":
+                        urlDomain.setText("nitdgp.connekt");
+                        break;
+
+                }
             }
 
             @Override
@@ -96,10 +116,7 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
 
             }
         });
-
     }
-
-
 
     @Override
     public void onClick(View view) {
@@ -171,7 +188,7 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
         list.add("NIT Durgapur");
 
 
-        return new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, list);
+        return new ArrayAdapter<>(this, R.layout.spinner_item, list);
     }
 
 
@@ -181,6 +198,7 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
         AuthUI.IdpConfig facebookIdp = new AuthUI.IdpConfig.Builder(AuthUI.FACEBOOK_PROVIDER)
                 .setPermissions(Arrays.asList("public_profile", "email"))
                 .build();
+
         startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
@@ -204,6 +222,7 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RC_SIGN_IN) {
+//            startActivity(new Intent(FacebookLogin.this, DashboardActivity.class));
             IdpResponse response = IdpResponse.fromResultIntent(data);
 
             // Successfully signed in
@@ -218,7 +237,9 @@ public class FacebookLogin extends AppCompatActivity implements View.OnClickList
                     mPrefs.setEmail(user.getEmail());
                     if (user.getPhotoUrl() != null)
                         mPrefs.setPhotoURL(user.getPhotoUrl().toString());
-                    FirebaseAuth.getInstance().signOut();
+//                    FirebaseAuth.getInstance().signOut();
+                    Toast.makeText(this, "Signed in", Toast.LENGTH_SHORT).show();
+
                     //TODO: Start an intent to go to login activity
 
                 } else {

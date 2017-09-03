@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -46,6 +47,11 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content, new HomeFragment())
+                .commit();
+
 //        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -63,10 +69,13 @@ public class DashboardActivity extends AppCompatActivity {
         TextView text3 = (TextView) findViewById(R.id.Image1Text);
         TextView text4 = (TextView) findViewById(R.id.Image2Text);
 
-        text1.setTypeface(custom_font2);
-        text2.setTypeface(custom_font2);
-        text3.setTypeface(custom_font2);
-        text4.setTypeface(custom_font2);
+        text1.setTypeface(custom_font2,Typeface.BOLD);
+        text2.setTypeface(custom_font2,Typeface.BOLD);
+        text3.setTypeface(custom_font2,Typeface.BOLD);
+        text4.setTypeface(custom_font2,Typeface.BOLD);
+
+
+
 
     }
 
